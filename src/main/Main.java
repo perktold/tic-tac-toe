@@ -4,19 +4,17 @@ import player.*;
 public class Main {
 
 	public static void main(String[] args) {
-		Grid grid = new Grid(6, 7);
+		Grid grid = new Grid(2,2);
 		Player [] players = new Player [] {
 				new CpuPlayer("cpu0", '0'),
-				new CpuPlayer("cpu1", '1'),
-				new CpuPlayer("cpu2", '2'),
-				new HumanPlayer("Moritz", 'O'),
+				//new CpuPlayer("cpu1", '1'),
+				//new CpuPlayer("cpu2", '2'),
+				//new HumanPlayer("Moritz", 'O'),
 				new HumanPlayer("Felix", '#')
 		};
 	
 		while(noneWon(players)) {
-			if(grid.full()) {
-				System.out.println("");
-			}
+			
 			grid.show();
 			for(int i = 0; i < players.length; i++) {
 				players[i].move(grid);
@@ -25,6 +23,10 @@ public class Main {
 				}
 				grid.show();
 				System.out.println();
+				if(grid.full()) {
+					System.out.println("Unentschieden!");
+					System.exit(0);
+				}
 			}
 		}
 		grid.show();

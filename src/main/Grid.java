@@ -39,7 +39,7 @@ public class Grid {
 		boolean full = true;
 		for(int i = 0; i < this.grid.length; i++) {
 			for(int j = 0; j < this.grid[i].length; j++) {
-				if(this.grid[i][j] != ' ') {
+				if(this.grid[i][j] == ' ') {
 					full = false;
 				}
 			}
