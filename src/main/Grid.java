@@ -12,20 +12,33 @@ public class Grid {
 			}
 		}
 	}
-	
+
+	//TODO clean this up
 	public void show() {
 		System.out.print("   ");
 		for(int x = 0; x < this.grid.length; x++) {
-			System.out.print(x+1 + " ");
+			System.out.printf("%4d",(x+1));
+		}
+		System.out.println("   X");
+		System.out.print("    +");
+		for(int i = 0; i < this.grid.length; i++) {
+			System.out.print("---+");
 		}
 		System.out.println();
 		for(int y = 0; y < this.grid[0].length; y++) {
-			System.out.print((y+1) + " |");
+			System.out.printf("%4d",(y+1));
+			System.out.print("|");
 			for(int x = 0; x < this.grid.length; x++) {
-				System.out.print(this.grid[x][y] + "|");
+				System.out.print(" "+ this.grid[x][y] + " |");
+			}
+			System.out.println();
+			System.out.print("    +");
+			for(int x = 0; x < this.grid.length; x++) {
+				System.out.printf("---+");
 			}
 			System.out.println();
 		}
+		System.out.println('Y');
 	}
 	
 	public void add(char symbol, int x, int y) throws FieldTakenException {

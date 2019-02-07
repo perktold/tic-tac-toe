@@ -68,6 +68,9 @@ public abstract class Player {
 		
 		return false;
 	}
+	public char getSymbol() {
+		return symbol;
+	}
 	public String getName() {
 		return name;
 	}
